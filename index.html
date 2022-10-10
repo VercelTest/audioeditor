@@ -6,13 +6,15 @@
     </head>
     <body>
         <input type="range" name="pitch-slider" min="-120" max="120" step="10">
-        <p>hi!</p>
+        <p name="pitch-text">0</p>
     </body>   
 
     <script>
-        let slider = document.getElementsByName("pitch-slider")
-        let text = document.getElementsByName("pitch-text")
+        while true {
+            let slider = document.getElementsByName("pitch-slider")
+            let ptext = document.getElementsByName("pitch-text")
 
-        text.text = slider
+             ptext.text = slider
+        }
     </script>
 </html>
