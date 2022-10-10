@@ -5,6 +5,14 @@
         <title>Audio Editor</title>
     </head>
     <body>
-        <input type="range" min="-120" max="120" step="10" onchange="showVal(this.value)">
+        <input type="range" name="pitch-slider" min="-120" max="120" step="10">
+        <p name="pitch-text">0</p>
     </body>   
+
+    <script>
+        let slider = document.getElementsByName("pitch-slider")
+        let text = document.getElementsByName("pitch-text")
+
+        text.text = slider
+    </script>
 </html>
