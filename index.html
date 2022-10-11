@@ -4,28 +4,14 @@
     <meta charset="utf-8" />
     <title>Audio Editor</title>
   </head>
-  <body onload="loaded();">
+  <body>
     <input type="range" id="pitch-slider" min="-120" max="120" step="10" />
-    <p id="pitch-text">0</p>
+    <p id="pitch-text">Loading...</p>
+
+    <input type="file" id="selected-audio" accept="audio/*">
+    <audio controls><source</audio>
   </body>
 
-  <script>
-    function wait(sec) {
-      const date = Date.now();
-      let currentDate = null;
-      do {
-        currentDate = Date.now();
-      } while (currentDate - date < sec * 1000);
-    }
-
-    function loaded() {
-      while (true) {
-        wait(.1);
-        let slider = document.getElementById("pitch-slider");
-        let ptext = document.getElementById("pitch-text");
-
-        ptext.innerHTML = slider.value;
-      }
-    }
+  <script src="/javascript/pitchslider.js"></script>
   </script>
 </html>
