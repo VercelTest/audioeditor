@@ -32,25 +32,29 @@
         })
     }) */
 
+    // ignore the random unused pieces of code thanks :)
     function playpause() {
         if (source != undefined && selectedfile.value) {
             if (onoff == "off") {
                 buttonplay.innerHTML = "Loading..."
                 buttonplay.setAttribute('activated', false)
 
-                if (source = "stopped") {createFile()}
-
                 onoff = "on"
                 buttonplay.innerHTML = "Pause"
                 buttonplay.setAttribute('activated', true)
                 
-                if (laststopped[1] == selectedfile.value.toString()) {source.start(0, Math.ceil(laststopped[0]))} else {source.start()}
+                audioCtx.resume()
             } else {
                 onoff = "off"
                 buttonplay.innerHTML = "Play"
-                source.stop()
-                source = "stopped"
-                laststopped = [audioCtx.currentTime, selectedfile.value.toString()]
+                audioCtx.suspend()
             }
         }
     }
+
+    selectedfile.addEventListener("change", function(){
+        if (buttonplay.innerHTML == "Pause") {
+            onoff = "off"
+            buttonplay.innerHTML = "Play"
+        }
+    })

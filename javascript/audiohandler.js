@@ -2,10 +2,12 @@
 const audioCtx = new AudioContext();
 let source = undefined
 let songLength;
+let none = 1
 
 const selectedfile = document.getElementById("selected-audio")
 
 function createFile() {
+
     const url = URL.createObjectURL(selectedfile.files[0])
 
     source = new AudioBufferSourceNode(audioCtx);
@@ -22,8 +24,8 @@ function createFile() {
           audioData,
           (buffer) => {
             source.playbackRate.value = semitones.value
-            if (source.buffer != NaN) {source.buffer = buffer}
-            source.connect(audioCtx.destination);
+            source.buffer = buffer
+            source.connect(audioCtx.destination)
           },
           (e) => {
             `Error with decoding audio data ${e.error}`;
@@ -32,9 +34,24 @@ function createFile() {
       };
 
       request.send();
-}
-// URL.revokeObjectURL(selectedfile.files[0])
+      source.start()
+      audioCtx.suspend()
 
+  console.log("Loaded ".concat(selectedfile.value))
+}
+
+// stops audio when new audio is loaded
+selectedfile.addEventListener("change", function(){
+  if (none < 1) {
+    audioCtx.suspend()
+    source.stop()
+    console.log("stopped")
+} else {
+  none = 0
+}
+})
+
+// loads file
 selectedfile.addEventListener("change", createFile)
 
 semitones = document.getElementById("pitch-slider")
