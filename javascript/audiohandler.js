@@ -36,6 +36,7 @@ function createFile() {
       request.send();
       source.start()
       audioCtx.suspend()
+      source.loop = true
 
   console.log("Loaded ".concat(selectedfile.value))
 }

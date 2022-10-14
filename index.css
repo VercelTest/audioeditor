@@ -1,0 +1,11 @@
+.bg{
+    background: rgb(121,9,109);
+    background: linear-gradient(0deg, rgba(121,9,109,1) 0%, rgba(255,121,216,1) 50%, rgba(128,0,255,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.slider{
+    justify-content: center;
+    width: 20%;
+}
