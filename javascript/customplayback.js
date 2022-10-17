@@ -1,20 +1,23 @@
     let buttonplay =  document.getElementById("Play/Pause")
-    let audiotimestamp = document.getElementById("source-timestamp")
+    let audiotimestamp = document.getElementById("audio-timestamp")
     let onoff = "off"
     let laststopped = ["1oo", "filler"]
     var timeinterval
-    /*
+
     // custom playback when source is loaded
     selectedfile.addEventListener("change", function(){
+        console.log(audioCtx)
+        console.log(source.buffer)
+
         // set slider to source duration
-        setTimeout(function hi() {audiotimestamp.setAttribute("max", source.duration)}, 100)
+        setTimeout(function() {audiotimestamp.setAttribute("max", new Audio(url).duration)}, 100)
         
         // automatically move slider with loaded source
-        timeinterval = setInterval(function() {audiotimestamp.value = source.currentTime}, 1)
+        timeinterval = setInterval(function() {audiotimestamp.value = audioCtx.currentTime}, 1)
         
-        // set source to slider clicked
+        // set current time to slider clicked
         audiotimestamp.onclick = function() {
-            source.currentTime = audiotimestamp.value
+            audioCtx.currentTime = audiotimestamp.value
         }
     
         setInterval(function(){
@@ -26,11 +29,11 @@
             }
         }, 1)
     
-        source.addEventListener("ended", function(){
+       /* source.addEventListener("ended", function(){
             onoff = "off"
             buttonplay.innerHTML = "Play"
-        })
-    }) */
+        }) */
+    })
 
     // ignore the random unused pieces of code thanks :)
     function playpause() {

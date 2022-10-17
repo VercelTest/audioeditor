@@ -3,18 +3,17 @@ const audioCtx = new AudioContext();
 let source = undefined
 let songLength;
 let none = 1
-
+var url
 const selectedfile = document.getElementById("selected-audio")
 
 function createFile() {
 
-    const url = URL.createObjectURL(selectedfile.files[0])
+    url = URL.createObjectURL(selectedfile.files[0])
 
     source = new AudioBufferSourceNode(audioCtx);
+    
       request = new XMLHttpRequest();
-
       request.open("GET", url, true);
-
       request.responseType = "arraybuffer";
 
       request.onload = () => {
@@ -51,6 +50,16 @@ selectedfile.addEventListener("change", function(){
   none = 0
 }
 })
+
+// resets audio to start
+function reset() {
+  if (none < 1) {
+    audioCtx.suspend()
+    source.stop()
+    console.log("stopped")
+    createFile()
+  }
+}
 
 // loads file
 selectedfile.addEventListener("change", createFile)
