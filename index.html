@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body class="bg">
-    <input type="range" id="pitch-slider" class="slider" onchange="changePitch();"min="0.1" max="2" step="0.1" />
+    <input type="range" id="pitch-slider" class="slider" onchange="changePitch();"min="0" max="2" step="0.1" />
     <label><input type="range" class="slider" id="audio-timestamp" min="0" max="0" /></label>
     <p id="pitch-text">Loading...</p>
 
     <input type="file" id="selected-audio" accept="audio/*">
     <button id="Play/Pause" onclick="playpause();">Play</button>
     <button id="Reset" onclick="reset();">Reset</button>
+    <button id="Download" onclick="download();">Download</button>
   </body>
 
   <script src="javascript/audiohandler.js"></script>
