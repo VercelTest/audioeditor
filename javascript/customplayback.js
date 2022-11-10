@@ -35,11 +35,11 @@
         }) */
     })
 
-    // ignore the random unused pieces of code thanks :)
+    /* ignore the random unused pieces of code thanks :) 
     function reset() {
         onoff = "off"
         buttonplay.innerHTML = "Play"
-    }
+    } */
 
     function playpause() {
         if (source != undefined && selectedfile.value) {
