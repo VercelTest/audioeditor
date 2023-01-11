@@ -4,16 +4,23 @@
     <meta charset="utf-8" />
     <title>Audio Editor</title>
     <link rel="stylesheet" href="index.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   </head>
   <body class="bg">
-    <input type="range" id="pitch-slider" class="slider" oninput="changePitch();"min="0" max="2" step="0.05" />
-    <label><input type="range" class="slider" id="audio-timestamp" min="0" max="0" /></label>
-    <p id="pitch-text">Loading...</p>
+<div class="audiogui">
+  <header>Audio Editor</header>
+  <input type="file" id="selected-audio" accept="audio/*" class="choosefile">
 
-    <input type="file" id="selected-audio" accept="audio/*">
-    <button id="Play/Pause" onclick="playpause();">Play</button>
-    <button id="Reset" onclick="reset();">Reset</button>
-    <button id="Download" onclick="">Download</button>
+  <div class="slidergui">
+    <input type="range" id="pitch-slider" class="slider" oninput="changePitch();"min="0" max="2" step="0.05" />
+    <p id="pitch-text" class="speed">Loading...</p>
+  </div>
+
+  <button id="Play/Pause" onclick="playpause();">Play</button>
+  <button id="Reset" onclick="reset();">Reset</button>
+  <button id="Download" onclick="">Download</button>
+</div>
+
   </body>
 
   <script src="javascript/audiohandler.js"></script>
