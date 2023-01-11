@@ -74,7 +74,7 @@ button:hover {
 
 button:active {
 	position:relative;
-	top:1px;
+	top:3px;
 }
 
 
@@ -137,5 +137,5 @@ input[type=range] {
     border-radius: 50px;
     cursor: pointer;
   }
-  
+
  
