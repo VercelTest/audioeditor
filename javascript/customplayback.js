@@ -10,12 +10,12 @@
         console.log(source.buffer)
 
         // set slider to source duration
-        setTimeout(function() {audiotimestamp.setAttribute("max", new Audio(url).duration)}, 100)
+        // setTimeout(function() {audiotimestamp.setAttribute("max", new Audio(url).duration)}, 100)
         
         // automatically move slider with loaded source
-        timeinterval = setInterval(function() {audiotimestamp.value = audioCtx.currentTime}, 1)
+       // timeinterval = setInterval(function() {audiotimestamp.value = audioCtx.currentTime}, 1)
         
-        // set current time to slider clicked
+        /* set current time to slider clicked
         audiotimestamp.onclick = function() {
             audioCtx.currentTime = audiotimestamp.value
         }
@@ -27,7 +27,7 @@
                 // timeinterval = setInterval(function() {audiotimestamp.value = source.currentTime}, 1)
                 // console.log("out of hover")
             }
-        }, 1)
+        }, 1) */
     
        /* source.addEventListener("ended", function(){
             onoff = "off"

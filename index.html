@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="index.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   </head>
-  <body class="bg">
+  <body class="bg" id="body">
 <div class="audiogui">
   <header>Audio Editor</header>
   <input type="file" id="selected-audio" accept="audio/*" class="choosefile">
@@ -17,8 +17,8 @@
   </div>
 
   <button id="Play/Pause" onclick="playpause();">Play</button>
-  <button id="Reset" onclick="reset();">Reset</button>
-  <button id="Download" onclick="">Download</button>
+  <button id="Reset" onclick="reset();">Restart Audio</button>
+  <button id="Download" onclick="download();">Download</button>
 </div>
 
   </body>
@@ -26,4 +26,5 @@
   <script src="javascript/audiohandler.js"></script>
   <script src="javascript/pitchslider.js"></script>
   <script src="javascript/customplayback.js"></script>
+  <script src="javascript/download.js"></script>
 </html>
